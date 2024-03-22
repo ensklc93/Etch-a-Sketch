@@ -14,7 +14,7 @@ for(let i = 0; i < standardSquare**2 ; i++) {
     hovering[i].addEventListener('mouseover', () => {
         hovering[i].setAttribute('class', 'gridHover')
     });
-}
+} 
 }
 startingGrid();
 
@@ -55,13 +55,34 @@ function getRandomColor() {
 const rndm = document.querySelector('#rndm')
 
 rndm.addEventListener('click', () => {
-    if(gridContainer.hasChildNodes()){
-        let childGrid = gridContainer.childNodes;
-       for(let colorise of childGrid) {
-       colorise.addEventListener('mouseover', () => {
-        colorise.style.backgroundColor = getRandomColor();
+    let childGrid = gridContainer.childNodes;
+    for(let colorise of childGrid) {
+        colorise.addEventListener('mouseover', () => {
+            colorise.style.backgroundColor = getRandomColor();
        })
     };
-       };
 });
 
+const makeBlack = document.querySelector('#makeBlack')
+
+makeBlack.addEventListener('click', () => {
+    let childGrid = gridContainer.childNodes;
+    for(let blacker of childGrid) {
+        blacker.addEventListener('mouseover', () => {
+            blacker.style.backgroundColor = 'black';
+        })
+    };
+});
+
+const erase = document.querySelector('#erase')
+
+erase.addEventListener('click', () => {
+    let childGrid = gridContainer.childNodes;
+    for(let eraser of childGrid) {
+        eraser.addEventListener('mouseover', () => {
+            eraser.style.backgroundColor = 'white';
+       })
+    };
+});
+
+opacity = opacity + 0.1
