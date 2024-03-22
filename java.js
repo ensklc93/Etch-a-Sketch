@@ -39,6 +39,29 @@ btn.addEventListener('click', () => {
             });
         }
     } else {
-        return alert("Please pick a number between 1 and 100");
+        return alert("Please pick a number between 1 and 100");g
     }
 });
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  };
+
+const rndm = document.querySelector('#rndm')
+
+rndm.addEventListener('click', () => {
+    if(gridContainer.hasChildNodes()){
+        let childGrid = gridContainer.childNodes;
+       for(let colorise of childGrid) {
+       colorise.addEventListener('mouseover', () => {
+        colorise.style.backgroundColor = getRandomColor();
+       })
+    };
+       };
+});
+
