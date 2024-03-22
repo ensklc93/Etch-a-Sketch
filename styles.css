@@ -7,11 +7,30 @@
 #gridContainer {
     display: flex;
     flex-wrap: wrap;
-    margin: 80px;
+    min-height: 520px;
+    min-width: 520px;
+    max-width: 520px;
+    max-height: 520px;
+    margin: 60px auto;
 }
 
 .gridSquare {
     border: 1px solid black;
-    width: 10px;
-    height: 10px;
+}
+
+.gridHover {
+    border: 1px solid black;
+    background-color: black;
+}
+
+#btn {
+    margin-top: 22px;
+    padding: 22px 100px;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#btnDiv {
+    display: flex;
+    justify-content: center;
 }
