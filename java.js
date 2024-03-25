@@ -62,7 +62,7 @@ rndm.addEventListener('click', () => {
             function darkenSquare () {
                 let currentBrightness = colorise.dataset.brightness || 100;
                     currentBrightness = parseInt(currentBrightness) - 10;
-                
+            
                 if(currentBrightness >= 0) {
                     colorise.style.filter = `brightness(${currentBrightness}%)`;
                     colorise.dataset.brightness = currentBrightness;
@@ -98,6 +98,9 @@ erase.addEventListener('click', () => {
     let childGrid = gridContainer.childNodes;
     for(let eraser of childGrid) {
         eraser.addEventListener('mouseover', () => {
+            eraser.style.removeProperty('filter')
+            eraser.removeAttribute('data-opacity')
+            eraser.removeAttribute('data-brightness')
             eraser.style.backgroundColor = 'white';
        })
     };
