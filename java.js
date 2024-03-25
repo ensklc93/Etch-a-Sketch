@@ -59,6 +59,24 @@ rndm.addEventListener('click', () => {
     for(let colorise of childGrid) {
         colorise.addEventListener('mouseover', () => {
             colorise.style.backgroundColor = getRandomColor();
+            function darkenSquare () {
+                let currentBrightness = colorise.dataset.brightness || 100;
+                    currentBrightness = parseInt(currentBrightness) - 10;
+                
+                if(currentBrightness >= 0) {
+                    colorise.style.filter = `brightness(${currentBrightness}%)`;
+                    colorise.dataset.brightness = currentBrightness;
+                }
+
+                let currentOpacity = colorise.dataset.opacity || 10;
+                    currentOpacity = parseInt(currentOpacity) + 10;
+                
+                if (currentOpacity <= 100) {
+                    colorise.style.filter = `opacity(${currentOpacity}%)`;
+                    colorise.dataset.opacity = currentOpacity;
+                }
+            }
+            darkenSquare();
        })
     };
 });
@@ -85,4 +103,3 @@ erase.addEventListener('click', () => {
     };
 });
 
-opacity = opacity + 0.1
